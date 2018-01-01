@@ -22,23 +22,35 @@ digraph SkillTreeGraph {
 
   subgraph cluster_02{
   label = "02. Gazebo" ;
-  "Sketch/Solidwork Models" 
-  "World" 
-  "Virtual Lane Following"
+  “Environment Setup Ubuntu 16.04, Gazebo 7” 
+  "Sketch for a Duckietown map and an AprilTag pole"
+  “Build A Model” 
+  "Launch A World" 
+  “Subscribe/Publish ROS Messages”
+  “Gazebo and RealWorld UR-5”
+  "Duckietown Virtual Lane Following"
   }
 
   subgraph cluster_03{
   label = "03. Deep Learning" ;
   "System Setup" 
-  "Caffe" 
-  "FCN"
+  "Prediction from Pre-trained Models" 
+  “Prediction on ROS Pi3 Intel NCS”
+  "Layer Computation"
+  “Network Structure and Surgery”
+  “FCN Caffe Marvin”
+  “Onboard Training and Prediction with ROS”
   }
 
   subgraph cluster_04{
   label = "04. 3D Perception" ;
-  "Point Cloud Library" 
-  "HSV Filter" 
-  "ICP" 
+  “TX2/Odroid/TX2 Setup with RGB-D Cameras”
+  “Openni/Realsense Visualization”
+  "Point Cloud HSV Filter" 
+  "Haptic Bracelet" 
+  “PCL Surface Normal” 
+  “PCL RANSAC”  
+  "PCL ICP" 
   }
 
   subgraph cluster_05{
@@ -49,6 +61,25 @@ digraph SkillTreeGraph {
   "PCL" 
   "RRT" 
   "iSAM" 
+  “UR-5 Tablet” 
+  “UR-5 ROS MoveIt” 
+  “SMACH” 
+  }
+
+  subgraph cluster_06{
+  label = “06. Marine Robotics” ;
+  “MOOS-IvP”
+  “MOOS ROS Binding”
+  “Gazebo USV Setup”
+  “GPS Bayes Filter”
+  “Arduino LED”
+  “Sequence Detector”
+  “Placard Features” 
+  “Placard DL” 
+  “PCL Convex Hull”
+  “VIO Tango”
+  “iSAM Navi” 
+  “Multi-Behaviors”
   }
 
 }

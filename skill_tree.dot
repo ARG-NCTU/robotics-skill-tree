@@ -73,13 +73,15 @@ digraph SkillTreeGraph {
   “Gazebo USV Setup”
   “GPS Bayes Filter”
   “Arduino LED”
-  “Sequence Detector”
+  “Light Buoy Sequence Detector”
   “Placard Features” 
   “Placard DL” 
-  “PCL Convex Hull”
+  “Velodyne”
+  “3D Feature Tracking”
   “VIO Tango”
   “iSAM Navi” 
-  “Multi-Behaviors”
+  “Multi-Behaviors Optimization”
+  “Task Manager”
   }
 
 }

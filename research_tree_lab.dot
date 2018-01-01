@@ -1,0 +1,54 @@
+
+graph {
+subgraph cluster_A {
+label = "colloabroators" ;
+"MIT" "ITRI" "UMass"
+}
+
+subgraph cluster_B{
+label = "research projects" ;
+"Duckietown" "Blind Navigation" "Wayfinding"
+
+}
+
+subgraph cluster_C{
+label = "research direction";
+"SLAM" "Robotic Vision" "Deep Learning" "VR/AR" "HRI" "Robotic Education"
+}
+
+subgraph cluster_D{
+label = "technical skills" ;
+"ROS" "LCM" "Gazebo" "Unity" "Caffe" "Solidwork 3D printing" "Latex" "Android/ios programing" "Unix-like system" "Website Full Stack" "Python" "OpenCV"
+}
+"Jack" [color=red];
+"ITRI" -- "VR/AR" -- "Gazebo" -- "Jack"[color=red];
+"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" -- "Jack"[color=red];
+"Latex" -- "Jack"[color=red];
+"HRI" -- "Gazebo"[color=red];
+"Jerry" [color=blue]
+"Android/ios programing" -- "Jerry" [color=blue]
+"Caffe" -- "Jerry" [color=blue]
+"Deep Learning" -- "Caffe" [color=blue]
+"Robotic Vision" -- "Caffe" [color=blue]
+"Website Full Stack" -- "Jerry" [color=blue]
+"Python" -- "Jerry" [color=blue]
+"Duckietown" -- "Robotic Vision"[color=blue]
+"JihShi" [color=purple];
+ "Deep Learning" -- "Caffe" -- "JihShi"[color=purple] 
+"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" -- "JihShi"[color=purple];
+"MIT" -- "Blind Navigation" -- "Robotic Education" [color=purple];
+"Robotic Education"--"LCM"--"JihShi"[color=purple];
+"Monica" [color=yellow];
+"UMass" -- "Wayfinding" -- "VR/AR" -- "Unity" -- "Monica" [color=yellow];
+"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" --  "Monica" [color=yellow];
+"MIT" -- "Blind Navigation" -- "Robotic Education" -- "Solidwork 3D printing" -- "Monica" [color=yellow];
+"Peter" [color=brown];
+"Robotic Vision" -- "OpenCV" -- "Peter"[color=brown];
+"Duckietown" -- "Robotic Education" -- "ROS" -- "Peter"[color=brown];
+"Kuo" [color=green];
+"Python" -- "Kuo" [color=green];
+"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" --  "Kuo" [color=green];
+"MIT" -- "Blind Navigation" -- "Robotic Vision" -- "ROS" -- "Kuo" [color=green];
+"MIT" -- "Duckietown" -- "SLAM" -- "ROS" -- "Kuo" [color=green];
+
+}

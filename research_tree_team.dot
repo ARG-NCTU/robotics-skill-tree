@@ -1,0 +1,62 @@
+
+graph {
+subgraph cluster_A {
+label = "colloabroators" ;
+"MIT" "ITRI"
+}
+
+subgraph cluster_B{
+label = "research projects" ;
+"Duckietown
+BC PH PC JK Kuo KS GC" 
+"Blind Navigation
+DH Kuo Ni GC"
+"semantic mapping
+BC JT KS"
+"Duckie-ant-team
+BC JK Kuo"
+
+}
+
+subgraph cluster_C{
+label = "research direction";
+"SLAM
+KS BC" 
+"Robotic Vision
+KS BC Ni GC Kuo JK PH" 
+"Deep Learning
+BC PH PC JT Kuo" 
+"VR/AR
+BC PH Kuo Ni JK" 
+"HRI
+BC" 
+"Robotic Education
+BC Kuo JK"
+}
+
+subgraph cluster_D{
+label = "technical skills" ;
+"ROS
+BC KS PH SL JK Kuo" 
+"LCM
+BC" 
+"Gazebo
+BC JK Kuo KS SL" 
+"Unity
+BC Ni" 
+"Caffe
+BC Kuo PC JT PH" 
+"Solidwork 3D printing" 
+"Latex
+BC" 
+"Android/ios programing" 
+"Unix-like system"
+"OpenCV
+PH Kuo"
+}
+"Solidwork 3D printing" -- "Deep Learning
+BC PH PC JT Kuo" -- "semantic mapping
+BC JT KS" -- "MIT" [style=invis];
+
+
+}

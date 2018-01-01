@@ -1,77 +1,54 @@
 digraph SkillTreeGraph {
 
-  // Broad Research Area
-  node [shape=box fontsize=13 color="blue" fontname="Times new Roman"];
-  ra_perception [label="Perception"];  
-  ra_machine_perception [label="Machine Perception"];  
-  ra_human_perception [label="Human Perception"];  
-  ra_assistive_tech [label="Assistive Technology"];  
-
-  // Concrete Problems
-  node [shape=ellipse fontsize=13 color="green" fontname="Courier"];
-  cp_slam [label="SLAM"];
-  cp_nav [label="Navigation"];
-  cp_obj [label="Object Detection \n and Recognition"];
-  cp_text [label="Text Spotting"];
-  cp_scene [label="Scene Perception"];
-  cp_att [label="Attention"];
-  cp_reading [label="Reading"];
-  cp_braille_read [label="Braille \n Reading"];
+  subgraph cluster_00{
+  label = "00. Computing Competency" ;
+  "Unix/Ubuntu" 
+  "Vim" 
+  "Git"
+  "Latex" 
+  "Python/Jupyter Notebook" 
+  "OpenCV (basic filters)"   
+  }
   
-  // Unsolved Problem
-  node [shape=ellipse color="red"  fontsize=9 fontname="Verdana"];
-  up_sem [label="High-level/Semantic \n Localization and Mapping"];
-  up_text [label="Real-time \n Text Spotting"];
-  up_nav [label="Navigation \n in Dynamic Environment"];
-  up_haptic [label="Haptic Perception \n for Symbol and Sketch (HCI)"]
+  subgraph cluster_01{
+  label = "01. Duckietown" ;
+  "Network Config" 
+  "ROS Subscribe/Publish" 
+  "Line Detector (Canny/HSV)" 
+  "Ground Projection" 
+  "Lane Filter"   
+  "OpenCV (face/object detectors)"
+  }
 
-  // specific unsolved problems
-  node [shape=ellipse color="orange"  fontsize=9 fontname="Verdana"];
-  sup_nav1 [label="Crosswalk Detection \n - RGB-D and surface \n -Trajectory Generation"];
-  sup_nav2 [label="Beacon for Point of Interest \n - Bluetooth/Tags/Text \n - Sensor Network"];
+  subgraph cluster_02{
+  label = "02. Gazebo" ;
+  "Sketch/Solidwork Models" 
+  "World" 
+  "Virtual Lane Following"
+  }
 
-  // questions
-  node [shape=note color="yellow"  fontsize=8 fontname="Verdana"];
-  q_slam1 [label="Can a robot find a room in CSAIL itself? \n - place recognition in a prior map. \n - read directional signage w/o a map."];
-  //q_slam2 [label="Will SLAM work in infinite corridors in the crowd? \n - tracking high-level features robost to occlusion"];
-  //q_text1 [label="Can we detect/decode text and symbols \n at least 10 fps with a classifier \n traned by less than 5 samples?"];
-  q_haptic1 [label="What is the minimum representation of an \n object sketch desplayed on 24x15 tactile device \n that (blind) people can recognize?"];
+  subgraph cluster_03{
+  label = "03. Deep Learning" ;
+  "System Setup" 
+  "Caffe" 
+  "FCN"
+  }
 
-  ////////////////////////////////////////////// 
-  ra_perception -> ra_machine_perception;
-  ra_perception -> ra_human_perception;
-  
-  ra_machine_perception -> cp_slam;
-  ra_machine_perception -> cp_obj;
-  ra_machine_perception -> cp_scene;
-  ra_human_perception -> cp_obj;
-  ra_human_perception -> cp_scene;
-  ra_human_perception -> cp_att;
-  ra_human_perception -> cp_reading; 
-  ra_assistive_tech -> up_text;
-  ra_assistive_tech -> up_nav;
-  ra_assistive_tech -> up_haptic;
+  subgraph cluster_04{
+  label = "04. 3D Perception" ;
+  "Point Cloud Library" 
+  "HSV Filter" 
+  "ICP" 
+  }
 
-  cp_slam -> up_sem;
-  cp_slam -> cp_nav;
-  cp_nav -> up_nav;
-  cp_obj -> cp_text;
-  cp_scene -> cp_nav;
-  cp_scene -> cp_text;
-  cp_text -> up_text;
-  cp_text -> up_sem;
-  cp_reading -> cp_braille_read;
-  cp_att -> cp_braille_read;
-  cp_obj -> up_haptic;
-  cp_braille_read -> up_haptic;
+  subgraph cluster_05{
+  label = "05. Sensing & Intellignet System" ;
+  "Arduino ROS"
+  "Wheel Odomotry"
+  "AprilTag Navigation" 
+  "PCL" 
+  "RRT" 
+  "iSAM" 
+  }
 
-  up_nav -> sup_nav1;
-  up_nav -> sup_nav2;
-  up_text -> sup_nav2;
-
-  up_sem -> q_slam1;
-  //up_sem -> q_slam2;
-  //up_nav -> q_slam2;
-  //up_text -> q_text1;
-  up_haptic -> q_haptic1;
 }

@@ -32,37 +32,48 @@ digraph SkillTreeGraph {
 		unix		[label="Unix/Ubuntu"]; 
 		vim		[label="Vim"]; 
 		git		[label="Git"];
-		latex		[label="Latex"]; 
+		latex_graphviz	[label="Latex/GrahpViz"]; 
 		py_jupyter	[label="Python/Jupyter Notebook"]; 
+		net_ssh		[label="Network/SSH"]; 
 		
-		unix->vim->git->latex->py_jupyter;   
+		unix->vim->git->latex_graphviz->py_jupyter;
+		vim->net_ssh->git;   
   	}
   
-	py_jupyter->cv_filters;
+	py_jupyter->cv_basic;
+	latex_graphviz->ros_sys_diagram;
 	
 	subgraph cluster_cv{
   		label = "Computer Vision" ;
-		cv_filters	[label="OpenCV (basic filters)"];
+		cv_basic	[label="OpenCV Basic"];
+		cv_filter	[label="OpenCV Filtering"];
 		cv_canny_hsv	[label="Line Detector (Canny/HSV)"]; 
 		cv_projection	[label="Ground Projection"]; 
-		cv_face_object	[label="OpenCV (face/object detectors)"];
+		cv_face_object	[label="OpenCV Face/Object Detectors)"];
+		cv_features	[label="OpenCV Features (SIFT)"];
 		
-		cv_filters->cv_canny_hsv->cv_projection->cv_face_object;   
+		cv_basic->cv_filter->cv_canny_hsv->cv_projection->cv_face_object->cv_features;   
   	}
   
 	subgraph cluster_ros{
 		label = "Robot Operation System (ROS)" ;
 		ros_sys_diagram	[label="ROS System Diagram"]; 
 		ros_sub_pub	[label="ROS Subscribe/Publish"]; 
+		ros_rviz_rqt	[label="ROS RViz/RQT"]; 
 		ros_arduino	[label="ROS Arduino"];
 		ros_android	[label="ROS Android"];   
+		ros_bag		[label="ROS Bag Logging"];   
+		ros_bag_anal	[label="ROS Bag Analysis"];   
 		
-		ros_sys_diagram->ros_sub_pub->ros_arduino->ros_android;
+		ros_sys_diagram->ros_sub_pub->ros_rviz_rqt->ros_arduino->ros_android;
+		ros_rviz_rqt->ros_bag->ros_bag_anal;
 	}
+
+	ros_rviz_rqt->dt_db_setup;
 
 	subgraph cluster_dt{
 		label = "01. Duckietown" ;
-		dt_db_setup		[label="Duckiebot Setup"]; 
+		dt_db_setup		[label="Duckiebot/Duckietop Setup"]; 
 		dt_camera_calib		[label="Camera Calibration"]; 
 		dt_wheel_calib		[label="Wheel Calibration"]; 
 		dt_lane_filter		[label="Lane Filter"]; 
@@ -72,10 +83,11 @@ digraph SkillTreeGraph {
 		dt_db_setup->dt_camera_calib->dt_wheel_calib->dt_lane_filter->dt_fsm->dt_lane_following;
 
 		// ros_sub_pub->dt_db_setup->cv_filters;
-		// cv_projection->dt_lane_filter;
 		// dt_lane_filter->dt_fsm->dt_lane_following;
 			
 	}
+	
+	cv_projection->dt_lane_filter;
 	
 	subgraph cluster_gz{
 		label = "Gazebo" ;
@@ -89,6 +101,8 @@ digraph SkillTreeGraph {
 
 		gz_setup->gz_sketch->gz_model->gz_world->gz_sub_pub->gz_ur5->gz_lane_follow;
 	}
+	
+	dt_lane_following->gz_setup;
 	
 	subgraph cluster_dl{
 		label = "Deep Learning" ;
@@ -105,6 +119,9 @@ digraph SkillTreeGraph {
 		dl_sys->dl_layers->dl_surgery-> dl_pred->dl_pred_ncs;
 		dl_sys->dl_grocery->dl_fcn_caffe->dl_fcn_marvin->dl_onboard;
 	}
+
+	py_jupyter->dl_sys;
+	ros_rviz_rqt->dl_pred_ncs;
 	
 	subgraph cluster_rgbd{
 		label = "RGB-D Perception" ;
@@ -119,6 +136,8 @@ digraph SkillTreeGraph {
 		rgbd_setup->rgbd_vis->rgbd_hsv_filter->rgbd_haptics;
 		rgbd_hsv_filter->rgbd_sur_normal->rgbd_ransac->rgbd_icp; 
 	}
+	
+	ros_rviz_rqt->rgbd_setup;
 	
 	subgraph cluster_mm{
 		label = "Sensing & Intellignet System" ;
@@ -136,6 +155,9 @@ digraph SkillTreeGraph {
 		mm_ur5_tablet->mm_ur5_moveit->mm_smach;
 	}
 	
+	ros_rviz_rqt->mm_212_setup;
+	rgbd_hsv_filter->mm_pcl;
+	rgbd_icp->rx_velodyne;
 	subgraph cluster_rx{
 		label = "RobotX"
 		rx_gps_filter	[label="GPS Bayes Filter"];
@@ -157,4 +179,6 @@ digraph SkillTreeGraph {
 		rx_velodyne->rx_feat_track->rx_vio_tango->rx_isam_nav->rx_moos_ivp->rx_moos_ros->rx_gazebo_usv->rx_behaviors->rx_task_manager; 	
 	}
 	
+	ros_rviz_rqt->rx_velodyne;
+	dt_lane_filter->rx_gps_filter;
 }

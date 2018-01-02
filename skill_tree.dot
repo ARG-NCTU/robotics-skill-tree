@@ -1,87 +1,160 @@
 digraph SkillTreeGraph {
 
-  subgraph cluster_00{
-  label = "00. Computing Competency" ;
-  "Unix/Ubuntu" 
-  "Vim" 
-  "Git"
-  "Latex" 
-  "Python/Jupyter Notebook" 
-  "OpenCV (basic filters)"   
-  }
+	subgraph cluster_legend{
+		label="Overview";
+		cc     		[label="Computing Competency"];
+		cv     		[label="Computer Vision"];
+		ros    		[label="Robot Operation System (ROS)"];
+		dt 		[label="Duckietown"];
+		gz    		[label="Gazebo"];
+		dl  		[label="Deep Learning"];
+		rgbd      	[label="3D Perception"];
+		mm      	[label="Mobile Manipulation"];
+		rx      	[label="RobotX"];
+		at      	[label="Assistive Technology"];
+		cc->cv;
+		cc->ros;
+		ros->dt;
+		cv->dt;
+		dt->gz->rx;
+		dt->rgbd->rx;
+		dt->dl->rx;
+		rgbd->at;
+		ros->mm;
+		dt->mm;
+		rgbd->mm;
+		dl->mm;
+		
+	}
+
+  	subgraph cluster_cc{
+  		label = "00. Computing Competency" ;
+		unix		[label="Unix/Ubuntu"]; 
+		vim		[label="Vim"]; 
+		git		[label="Git"];
+		latex		[label="Latex"]; 
+		py_jupyter	[label="Python/Jupyter Notebook"]; 
+		
+		unix->vim->git->latex->py_jupyter;   
+  	}
   
-  subgraph cluster_01{
-  label = "01. Duckietown" ;
-  "Network Config" 
-  "ROS Subscribe/Publish" 
-  "Line Detector (Canny/HSV)" 
-  "Ground Projection" 
-  "Lane Filter"   
-  "OpenCV (face/object detectors)"
-  }
+	py_jupyter->cv_filters;
+	
+	subgraph cluster_cv{
+  		label = "Computer Vision" ;
+		cv_filters	[label="OpenCV (basic filters)"];
+		cv_canny_hsv	[label="Line Detector (Canny/HSV)"]; 
+		cv_projection	[label="Ground Projection"]; 
+		cv_face_object	[label="OpenCV (face/object detectors)"];
+		
+		cv_filters->cv_canny_hsv->cv_projection->cv_face_object;   
+  	}
+  
+	subgraph cluster_ros{
+		label = "Robot Operation System (ROS)" ;
+		ros_sys_diagram	[label="ROS System Diagram"]; 
+		ros_sub_pub	[label="ROS Subscribe/Publish"]; 
+		ros_arduino	[label="ROS Arduino"];
+		ros_android	[label="ROS Android"];   
+		
+		ros_sys_diagram->ros_sub_pub->ros_arduino->ros_android;
+	}
 
-  subgraph cluster_02{
-  label = "02. Gazebo" ;
-  "Environment Setup Ubuntu 16.04, Gazebo 7"
-  "Sketch for a Duckietown map and an AprilTag pole"
-  "Build A Model"
-  "Launch A World" 
-  "Subscribe/Publish ROS Messages"
-  "Gazebo and RealWorld UR-5"
-  "Duckietown Virtual Lane Following"
-  }
+	subgraph cluster_dt{
+		label = "01. Duckietown" ;
+		dt_db_setup		[label="Duckiebot Setup"]; 
+		dt_camera_calib		[label="Camera Calibration"]; 
+		dt_wheel_calib		[label="Wheel Calibration"]; 
+		dt_lane_filter		[label="Lane Filter"]; 
+		dt_fsm			[label="Finite State Machine"]; 
+		dt_lane_following	[label="Lane Following"]; 
+		
+		dt_db_setup->dt_camera_calib->dt_wheel_calib->dt_lane_filter->dt_fsm->dt_lane_following;
 
-  subgraph cluster_03{
-  label = "03. Deep Learning" ;
-  "System Setup" 
-  "Prediction from Pre-trained Models" 
-  "Prediction on ROS Pi3 Intel NCS"
-  "Layer Computation"
-  "Network Structure and Surgery"
-  "FCN Caffe Marvin"
-  "Onboard Training and Prediction with ROS"
-  }
+		// ros_sub_pub->dt_db_setup->cv_filters;
+		// cv_projection->dt_lane_filter;
+		// dt_lane_filter->dt_fsm->dt_lane_following;
+			
+	}
+	
+	subgraph cluster_gz{
+		label = "Gazebo" ;
+		gz_setup 	[label="Environment Setup Ubuntu 16.04, Gazebo 7"];
+		gz_sketch 	[label="Sketch for a Duckietown map and an AprilTag pole"];
+		gz_model 	[label="Build A Model"];
+		gz_world 	[label="Launch A World"]; 
+		gz_sub_pub 	[label="Subscribe/Publish ROS Messages"];
+		gz_ur5 		[label="Gazebo and RealWorld UR-5"];
+		gz_lane_follow 	[label="Duckietown Virtual Lane Following"];
 
-  subgraph cluster_04{
-  label = "04. 3D Perception" ;
-  "TX2/Odroid/TX2 Setup with RGB-D Cameras"
-  "Openni/Realsense Visualization"
-  "Point Cloud HSV Filter" 
-  "Haptic Bracelet" 
-  "PCL Surface Normalâ"
-  "PCL RANSAC"
-  "PCL ICP" 
-  }
+		gz_setup->gz_sketch->gz_model->gz_world->gz_sub_pub->gz_ur5->gz_lane_follow;
+	}
+	
+	subgraph cluster_dl{
+		label = "Deep Learning" ;
+		dl_sys 		[label="System Setup"]; 
+		dl_layers 	[label="Layer Computation"];
+		dl_surgery 	[label="Network Structure and Surgery"];
+		dl_pred 	[label="Prediction from Pre-trained Models"]; 
+		dl_pred_ncs 	[label="Prediction on ROS Pi3 Intel NCS"];
+		dl_grocery 	[label="Training with Freiburg Groceries"];
+		dl_fcn_caffe 	[label="FCN Caffe"];
+		dl_fcn_marvin 	[label="FCN Marvin"];
+		dl_onboard [label="Onboard Training and Prediction with ROS"];
 
-  subgraph cluster_05{
-  label = "05. Sensing & Intellignet System" ;
-  "Arduino ROS"
-  "Wheel Odomotry"
-  "AprilTag Navigation" 
-  "PCL" 
-  "RRT" 
-  "iSAM" 
-  "UR-5 Tablet"
-  "UR-5 ROS MoveIt"
-  "SMACH"
-  }
+		dl_sys->dl_layers->dl_surgery-> dl_pred->dl_pred_ncs;
+		dl_sys->dl_grocery->dl_fcn_caffe->dl_fcn_marvin->dl_onboard;
+	}
+	
+	subgraph cluster_rgbd{
+		label = "RGB-D Perception" ;
+		rgbd_setup	[label="TX2/Odroid/TX2 Setup with RGB-D Cameras"];
+		rgbd_vis 	[label="Openni/Realsense Visualization"];
+		rgbd_hsv_filter [label="Point Cloud HSV Filter"]; 
+		rgbd_haptics 	[label="Haptic Bracelet"]; 
+		rgbd_sur_normal [label="PCL Surface Normal"];
+		rgbd_ransac 	[label="PCL RANSAC"];
+		rgbd_icp 	[label="PCL ICP"];
 
-  subgraph cluster_06{
-  label = "06. Marine Robotics"
-  "MOOS-IvP"
-  "MOOS ROS Binding"
-  "Gazebo USV Setup"
-  "GPS Bayes Filter"
-  "Arduino LED"
-  "Light Buoy Sequence Detector"
-  "Placard Features"
-  "Placard DL"
-  "Velodyne"
-  "3D Feature Tracking"
-  "VIO Tango"
-  "iSAM Navi"
-  "Multi-Behaviors Optimization"
-  "Task Manager"
-  }
+		rgbd_setup->rgbd_vis->rgbd_hsv_filter->rgbd_haptics;
+		rgbd_hsv_filter->rgbd_sur_normal->rgbd_ransac->rgbd_icp; 
+	}
+	
+	subgraph cluster_mm{
+		label = "Sensing & Intellignet System" ;
+		mm_212_setup	[label="2.12 Robot Setup"];
+		mm_wheel_odom	[label="Wheel Odomotry"];
+		mm_apriltag_nav	[label="AprilTag Navigation"]; 
+		mm_pcl		[label="PCL"]; 
+		mm_rrt		[label="RRT"]; 
+		mm_isam		[label="iSAM"]; 
+		mm_ur5_tablet	[label="UR-5 Tablet"];
+		mm_ur5_moveit	[label="UR-5 ROS MoveIt"];
+		mm_smach	[label="SMACH"];
 
+		mm_212_setup->mm_wheel_odom->mm_apriltag_nav->mm_pcl->mm_rrt->mm_isam->mm_ur5_moveit;
+		mm_ur5_tablet->mm_ur5_moveit->mm_smach;
+	}
+	
+	subgraph cluster_rx{
+		label = "RobotX"
+		rx_gps_filter	[label="GPS Bayes Filter"];
+		rx_arduino_led	[label="Arduino LED"];
+		rx_seq_det	[label="Light Buoy Sequence Detector"];
+		rx_placard_fea	[label="Placard Features"];
+		rx_placard_dl	[label="Placard DL"];
+		rx_velodyne	[label="Velodyne"];
+		rx_feat_track	[label="3D Feature Tracking"];
+		rx_vio_tango	[label="VIO Tango"];
+		rx_isam_nav	[label="iSAM Navi"];
+		rx_moos_ivp	[label="MOOS-IvP"];
+		rx_moos_ros	[label="MOOS ROS Binding"];
+		rx_gazebo_usv	[label="Gazebo USV Setup"];
+		rx_behaviors	[label="Multi-Behaviors Optimization"];
+		rx_task_manager	[ilabel="Task Manager"];
+
+		rx_gps_filter->rx_arduino_led->rx_seq_det->rx_placard_fea->rx_placard_dl;
+		rx_velodyne->rx_feat_track->rx_vio_tango->rx_isam_nav->rx_moos_ivp->rx_moos_ros->rx_gazebo_usv->rx_behaviors->rx_task_manager; 	
+	}
+	
 }

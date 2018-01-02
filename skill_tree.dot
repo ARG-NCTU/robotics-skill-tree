@@ -22,12 +22,12 @@ digraph SkillTreeGraph {
 
   subgraph cluster_02{
   label = "02. Gazebo" ;
-  “Environment Setup Ubuntu 16.04, Gazebo 7” 
+  "Environment Setup Ubuntu 16.04, Gazebo 7"
   "Sketch for a Duckietown map and an AprilTag pole"
-  “Build A Model” 
+  "Build A Model"
   "Launch A World" 
-  “Subscribe/Publish ROS Messages”
-  “Gazebo and RealWorld UR-5”
+  "Subscribe/Publish ROS Messages"
+  "Gazebo and RealWorld UR-5"
   "Duckietown Virtual Lane Following"
   }
 
@@ -35,21 +35,21 @@ digraph SkillTreeGraph {
   label = "03. Deep Learning" ;
   "System Setup" 
   "Prediction from Pre-trained Models" 
-  “Prediction on ROS Pi3 Intel NCS”
+  "Prediction on ROS Pi3 Intel NCS"
   "Layer Computation"
-  “Network Structure and Surgery”
-  “FCN Caffe Marvin”
-  “Onboard Training and Prediction with ROS”
+  "Network Structure and Surgery"
+  "FCN Caffe Marvin"
+  "Onboard Training and Prediction with ROS"
   }
 
   subgraph cluster_04{
   label = "04. 3D Perception" ;
-  “TX2/Odroid/TX2 Setup with RGB-D Cameras”
-  “Openni/Realsense Visualization”
+  "TX2/Odroid/TX2 Setup with RGB-D Cameras"
+  "Openni/Realsense Visualization"
   "Point Cloud HSV Filter" 
   "Haptic Bracelet" 
-  “PCL Surface Normal” 
-  “PCL RANSAC”  
+  "PCL Surface Normal�"
+  "PCL RANSAC"
   "PCL ICP" 
   }
 
@@ -61,27 +61,27 @@ digraph SkillTreeGraph {
   "PCL" 
   "RRT" 
   "iSAM" 
-  “UR-5 Tablet” 
-  “UR-5 ROS MoveIt” 
-  “SMACH” 
+  "UR-5 Tablet"
+  "UR-5 ROS MoveIt"
+  "SMACH"
   }
 
   subgraph cluster_06{
-  label = “06. Marine Robotics” ;
-  “MOOS-IvP”
-  “MOOS ROS Binding”
-  “Gazebo USV Setup”
-  “GPS Bayes Filter”
-  “Arduino LED”
-  “Light Buoy Sequence Detector”
-  “Placard Features” 
-  “Placard DL” 
-  “Velodyne”
-  “3D Feature Tracking”
-  “VIO Tango”
-  “iSAM Navi” 
-  “Multi-Behaviors Optimization”
-  “Task Manager”
+  label = "06. Marine Robotics"
+  "MOOS-IvP"
+  "MOOS ROS Binding"
+  "Gazebo USV Setup"
+  "GPS Bayes Filter"
+  "Arduino LED"
+  "Light Buoy Sequence Detector"
+  "Placard Features"
+  "Placard DL"
+  "Velodyne"
+  "3D Feature Tracking"
+  "VIO Tango"
+  "iSAM Navi"
+  "Multi-Behaviors Optimization"
+  "Task Manager"
   }
 
 }

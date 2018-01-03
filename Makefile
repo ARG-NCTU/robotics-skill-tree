@@ -1,7 +1,13 @@
-all:
-	dot -Tpng skill_tree.dot -o skill_tree.png
-	dot -Tsvg skill_tree.dot -o skill_tree.svg
+all: skill_tree.pdf
+
+%.dot: %.dot.in
+	python prepare.py < $< > $@
+
+%.pdf: %.dot
+	dot $< -Tpdf -o $@
+
+update-continuous: 
+	python recreate_on_changes.py skill_tree.dot.in skill_tree.dot
+
 	
-research:
-	dot -Tpng research_tree.dot -o research_tree.png
-	dot -Tsvg research_tree.dot -o research_tree.svg
+	

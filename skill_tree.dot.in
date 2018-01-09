@@ -1,17 +1,27 @@
 digraph SkillTreeGraph {
 
 	subgraph cluster_legend{
+		label="legend";
+		missing     [!NODE:missing!,     label="missing"];
+		development [!NODE:development!, label="development"];
+		compiled    [!NODE:compiled!,    label="compiled"];
+		documented  [!NODE:documented!,  label="documented"];
+		tested      [!NODE:tested!,      label="tested"];
+		missing->development->compiled->documented->tested;
+	}
+
+	subgraph cluster_overview{
 		label="Overview";
-		cc     		[label="Computing Competency"];
-		cv     		[label="Computer Vision"];
-		ros    		[label="Robot Operation System (ROS)"];
-		dt 		[label="Duckietown"];
-		gz    		[label="Gazebo"];
-		dl  		[label="Deep Learning"];
-		rgbd      	[label="3D Perception"];
-		mm      	[label="Mobile Manipulation"];
-		rx      	[label="RobotX"];
-		at      	[label="Assistive Technology"];
+		cc     		[label="Computing Competency (cc)"];
+		cv     		[label="Computer Vision (cv)"];
+		ros    		[label="Robot Operation System (ROS) (ros)"];
+		dt 		[label="Duckietown (dt)"];
+		gz    		[label="Gazebo (gz)"];
+		dl  		[label="Deep Learning (dl)"];
+		rgbd      	[label="3D Perception (rgbd)"];
+		mm      	[label="Mobile Manipulation (mm)"];
+		rx      	[label="RobotX (rx)"];
+		at      	[label="Assistive Technology (at)"];
 		cc->cv;
 		cc->ros;
 		ros->dt;
@@ -24,11 +34,10 @@ digraph SkillTreeGraph {
 		dt->mm;
 		rgbd->mm;
 		dl->mm;
-		
 	}
 
   	subgraph cluster_cc{
-  		label = "00. Computing Competency" ;
+  		label = "Computing Competency" ;
 		unix		[label="Unix/Ubuntu"]; 
 		vim		[label="Vim"]; 
 		git		[label="Git"];
@@ -173,7 +182,7 @@ digraph SkillTreeGraph {
 		rx_moos_ros	[label="MOOS ROS Binding"];
 		rx_gazebo_usv	[label="Gazebo USV Setup"];
 		rx_behaviors	[label="Multi-Behaviors Optimization"];
-		rx_task_manager	[ilabel="Task Manager"];
+		rx_task_manager	[label="Task Manager"];
 
 		rx_gps_filter->rx_arduino_led->rx_seq_det->rx_placard_fea->rx_placard_dl;
 		rx_velodyne->rx_feat_track->rx_vio_tango->rx_isam_nav->rx_moos_ivp->rx_moos_ros->rx_gazebo_usv->rx_behaviors->rx_task_manager; 	

@@ -7,10 +7,9 @@ def apply_rules(s):
     node='shape=ellipse, style=filled, ' 
     s = s.replace('!NODE:missing!',     node + 'fillcolor=red')
     s = s.replace('!NODE:development!', node + 'fillcolor=pink')
-    s = s.replace('!NODE:designed!',    node + 'fillcolor=orange')
-    s = s.replace('!NODE:compiled!',    node + 'fillcolor=yellow')
-    s = s.replace('!NODE:documented!',  node + 'fillcolor=green')
-    s = s.replace('!NODE:tested!',      node + 'fillcolor=white')
+    s = s.replace('!NODE:compiled!',    node + 'fillcolor=orange')
+    s = s.replace('!NODE:documented!',  node + 'fillcolor=yellow')
+    s = s.replace('!NODE:tested!',      node + 'fillcolor=green')
     
     s = s.replace('!CONFIG!', 'shape=note, style=filled, fillcolor=grey')
     s = s.replace('!TOPIC!',    'shape=box, style=filled, fillcolor=white')

@@ -13,13 +13,13 @@ digraph SkillTreeGraph {
 	subgraph cluster_overview{
 		label="Overview";
 		cc     		[label="Computing Competency (cc)"];
-		cv     		[!NODE:missing!,label="Computer Vision (cv)"];
+		cv     		[label="Computer Vision (cv)"];
 		ros    		[!NODE:missing!,label="Robot Operation System (ROS) (ros)"];
-		dt 		[!NODE:missing!,label="Duckietown (dt)"];
-		gz    		[!NODE:missing!,label="Gazebo (gz)"];
+		dt 		[label="Duckietown (dt)"];
+		gz    		[label="Gazebo (gz)"];
 		dl  		[label="Deep Learning (dl)"];
 		rgbd      	[label="3D Perception (rgbd)"];
-		mm      	[!NODE:missing!,label="Mobile Manipulation (mm)"];
+		mm      	[label="Mobile Manipulation (mm)"];
 		rx      	[!NODE:missing!,label="RobotX (rx)"];
 		at      	[!NODE:missing!,label="Assistive Technology (at)"];
 		cc->cv;
@@ -42,8 +42,8 @@ digraph SkillTreeGraph {
 		vim		[!NODE:documented!,label="Vim"]; 
 		git		[!NODE:documented!,label="Git"];
 		latex_graphviz	[!NODE:documented!,label="Latex/GraphViz"]; 
-		py_jupyter	[!NODE:missing!,label="Python/Jupyter Notebook"]; 
-		net_ssh		[label="Network/SSH"]; 
+		py_jupyter	[!NODE:documented!,label="Python/Jupyter Notebook"]; 
+		net_ssh		[!NODE:missing!,label="Network/SSH"]; 
 		
 		unix->vim->git->latex_graphviz->py_jupyter;
 		vim->net_ssh->git;   

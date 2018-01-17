@@ -43,7 +43,7 @@ digraph SkillTreeGraph {
 		git		[!NODE:documented!,label="Git"];
 		latex_graphviz	[!NODE:documented!,label="Latex/GraphViz"]; 
 		py_jupyter	[!NODE:documented!,label="Python/Jupyter Notebook"]; 
-		net_ssh		[!NODE:missing!,label="Network/SSH"]; 
+		net_ssh		[!NODE:compiled!,label="Network/SSH"]; 
 		
 		unix->vim->git->latex_graphviz->py_jupyter;
 		vim->net_ssh->git;   
@@ -54,12 +54,12 @@ digraph SkillTreeGraph {
 	
 	subgraph cluster_cv{
   		label = "Computer Vision" ;
-		cv_basic	[label="OpenCV Basic"];
-		cv_filter	[label="OpenCV Filtering"];
-		cv_canny_hsv	[label="Line Detector (Canny/HSV)"]; 
-		cv_projection	[label="Ground Projection"]; 
+		cv_basic	[!NODE:compiled!,label="OpenCV Basic"];
+		cv_filter	[!NODE:compiled!,label="OpenCV Filtering"];
+		cv_canny_hsv	[!NODE:missing!,label="Line Detector (Canny/HSV)"]; 
+		cv_projection	[!NODE:missing!,label="Ground Projection"]; 
 		cv_face_object	[label="OpenCV Face/Object Detectors)"];
-		cv_features	[label="OpenCV Features (SIFT)"];
+		cv_features	[!NODE:compiled!,label="OpenCV Features (SIFT)"];
 		
 		cv_basic->cv_filter->cv_canny_hsv->cv_projection->cv_face_object->cv_features;   
   	}
@@ -82,12 +82,12 @@ digraph SkillTreeGraph {
 
 	subgraph cluster_dt{
 		label = "01. Duckietown" ;
-		dt_db_setup		[label="Duckiebot/Duckietop Setup"]; 
-		dt_camera_calib		[label="Camera Calibration"]; 
-		dt_wheel_calib		[label="Wheel Calibration"]; 
-		dt_lane_filter		[label="Lane Filter"]; 
-		dt_fsm			[label="Finite State Machine"]; 
-		dt_lane_following	[label="Lane Following"]; 
+		dt_db_setup		[!NODE:missing!,label="Duckiebot/Duckietop Setup"]; 
+		dt_camera_calib		[!NODE:documented!,label="Camera Calibration"]; 
+		dt_wheel_calib		[!NODE:documented!,label="Wheel Calibration"]; 
+		dt_lane_filter		[!NODE:documented!,label="Lane Filter"]; 
+		dt_fsm			[!NODE:missing!,label="Finite State Machine"]; 
+		dt_lane_following	[!NODE:documented!,label="Lane Following"]; 
 		
 		dt_db_setup->dt_camera_calib->dt_wheel_calib->dt_lane_filter->dt_fsm->dt_lane_following;
 

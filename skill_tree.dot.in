@@ -54,7 +54,7 @@ digraph SkillTreeGraph {
 	
 	subgraph cluster_cv{
   		label = "Computer Vision" ;
-		cv_basic	[!NODE:compiled!,label="OpenCV Basic"];
+		cv_basic	[!NODE:documented!,label="OpenCV Basic"];
 		cv_filter	[!NODE:compiled!,label="OpenCV Filtering"];
 		cv_canny_hsv	[!NODE:missing!,label="Line Detector (Canny/HSV)"]; 
 		cv_projection	[!NODE:missing!,label="Ground Projection"]; 

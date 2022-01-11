@@ -1,54 +1,59 @@
 
 graph {
 subgraph cluster_A {
-label = "colloabroators" ;
-"MIT" "ITRI" "UMass"
+label = "Colloabroators" ;
+"MIT" "GMU" "AI Chips/FPGA"
+}
+
+subgraph cluster_A1 {
+label = "Robots" ;
+"Husky" "Husky + UR5" "Jackal" "Jackal + ViperX" "Service BedBot"
 }
 
 subgraph cluster_B{
-label = "research projects" ;
-"Duckietown" "Blind Navigation" "Wayfinding"
+label = "Research Projects" ;
+"Duckietown AI Chips" "Sound Navigation" "Dual-Arm"
 
 }
 
 subgraph cluster_C{
 label = "research direction";
-"SLAM" "Robotic Vision" "Deep Learning" "VR/AR" "HRI" "Robotic Education"
+"SLAM" "DRL" "Robust Perception" "VR/AR HRI" "Robotic Education"
 }
 
 subgraph cluster_D{
-label = "technical skills" ;
-"ROS" "LCM" "Gazebo" "Unity" "Caffe" "Solidwork 3D printing" "Latex" "Android/ios programing" "Unix-like system" "Website Full Stack" "Python" "OpenCV"
+label = "Technical Skills - Core" ;
+"Docker" "ROS" "ROS2/DDS" "Gazebo" "PyTorch" "Python" "PyRobot"
 }
-"Jack" [color=red];
-"ITRI" -- "VR/AR" -- "Gazebo" -- "Jack"[color=red];
-"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" -- "Jack"[color=red];
-"Latex" -- "Jack"[color=red];
-"HRI" -- "Gazebo"[color=red];
-"Jerry" [color=blue]
-"Android/ios programing" -- "Jerry" [color=blue]
-"Caffe" -- "Jerry" [color=blue]
-"Deep Learning" -- "Caffe" [color=blue]
-"Robotic Vision" -- "Caffe" [color=blue]
-"Website Full Stack" -- "Jerry" [color=blue]
-"Python" -- "Jerry" [color=blue]
-"Duckietown" -- "Robotic Vision"[color=blue]
-"JihShi" [color=purple];
- "Deep Learning" -- "Caffe" -- "JihShi"[color=purple] 
-"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" -- "JihShi"[color=purple];
-"MIT" -- "Blind Navigation" -- "Robotic Education" [color=purple];
-"Robotic Education"--"LCM"--"JihShi"[color=purple];
-"Monica" [color=yellow];
-"UMass" -- "Wayfinding" -- "VR/AR" -- "Unity" -- "Monica" [color=yellow];
-"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" --  "Monica" [color=yellow];
-"MIT" -- "Blind Navigation" -- "Robotic Education" -- "Solidwork 3D printing" -- "Monica" [color=yellow];
-"Peter" [color=brown];
-"Robotic Vision" -- "OpenCV" -- "Peter"[color=brown];
-"Duckietown" -- "Robotic Education" -- "ROS" -- "Peter"[color=brown];
-"Kuo" [color=green];
-"Python" -- "Kuo" [color=green];
-"MIT" -- "Duckietown" -- "Robotic Education" -- "ROS" --  "Kuo" [color=green];
-"MIT" -- "Blind Navigation" -- "Robotic Vision" -- "ROS" -- "Kuo" [color=green];
-"MIT" -- "Duckietown" -- "SLAM" -- "ROS" -- "Kuo" [color=green];
+
+subgraph cluster_D1{
+label = "Technical Skills - Multiverse" ;
+"Unity" "C#" 
+}
+
+subgraph cluster_D2{
+label = "Technical Skills - AI Chips" ;
+ "PYNQ" "Vitas" "C/C++" "OpenCV"
+}
+
+subgraph cluster_D3{
+label = "Technical Skills - Others" ;
+"ROS" "ROS2/DDS" "Tensorflow" "Solidwork" 
+}
+
+"Isabella" [color=red];
+"GMU" -- "Sound Navigation" -- "VR/AR HRI" -- "Unity" -- "Isabella"[color=red];
+"Husky" --  "Sound Navigation" -- "DRL" -- "PyTorch" -- "Isabella"[color=red];
+
+
+"Sam" [color=green];
+"GMU" -- "Dual-Arm" -- "VR/AR HRI" -- "Unity" -- "Sam"[color=green];
+"Service BedBot" --  "Dual-Arm" [color=green]; 
+"Solidwork" -- "Sam"[color=green];
+
+"Louis" [color=blue];
+"AI Chips/FPGA" -- "Duckietown AI Chips" -- "Robust Perception" -- "Vitas" -- "Louis"[color=blue];
+
+
 
 }

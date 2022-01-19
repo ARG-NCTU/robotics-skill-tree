@@ -48,7 +48,9 @@ label = "Technical Skills - Others" ;
 
 "Sam" [color=green];
 "GMU" -- "Dual-Arm" -- "VR/AR HRI" -- "Unity" -- "Sam"[color=green];
-"Service BedBot" --  "Dual-Arm" [color=green]; 
+"Service BedBot" --  "Dual-Arm" -- "ROS" --"Sam" [color=green]; 
+		     "Dual-Arm" -- "Gazebo" -- "Sam" [color=green];
+		     "Dual-Arm" -- "Docker" -- "Sam" [color=green];
 "Solidwork" -- "Sam"[color=green];
 
 "Louis" [color=blue];

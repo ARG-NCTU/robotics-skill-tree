@@ -49,6 +49,9 @@ label = "Technical Skills - Others" ;
 "Isabella" [color=red];
 "GMU" -- "Sound Navigation" -- "VR/AR HRI" -- "Unity" -- "Isabella"[color=red];
 "Husky" --  "Sound Navigation" -- "DRL" -- "PyTorch" -- "Isabella"[color=red];
+"DRL" -- "Gazebo" -- "Isabella"[color=red];
+"Robotic Education" -- "ROS" -- "Isabella"[color=red];
+"Robotic Education" -- "Docker" -- "Isabella"[color=red];
 
 
 "Sam" [color=green];

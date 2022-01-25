@@ -66,4 +66,11 @@ label = "Technical Skills - Others" ;
 "Husky" -- "SAR UGV" -- "DRL"[color=goldenrod1];"DRL" -- "Gazebo"[color=goldenrod1];"DRL" -- "Python"[color=goldenrod1];
            "SAR UGV" -- "SLAM"[color=goldenrod1];
 "C/C++" -- "Yellow"[color=goldenrod1] ;"Python" -- "Yellow"[color=goldenrod1] ;"PyTorch" -- "Yellow"[color=goldenrod1] ;"Gazebo" -- "Yellow"[color=goldenrod1] ;"ROS" -- "Yellow"[color=goldenrod1] ;"Docker" -- "Yellow"[color=goldenrod1] ;"QT" -- "Yellow"[color=goldenrod1] ;"OpenCV" -- "Yellow"[color=goldenrod1] ;"Open3D" -- "Yellow"[color=goldenrod1] ;"PCL" -- "Yellow"[color=goldenrod1] ;
+
+
+"L-Ray" [color=purple];
+"Husky" -- "SAR UGV" -- "DRL"[color=purple];"DRL" -- "Gazebo"[color=purple];"DRL" -- "Python"[color=purple];
+           "SAR UGV" -- "SLAM"[color=purple]; "SLAM" -- "C/C++"[color=purple] 
+"Husky + UR5" -- "SAR UGV"[color=purple];
+"C/C++" -- "L-Ray"[color=purple] ;"Python" -- "L-Ray"[color=purple] ;"PyTorch" -- "L-Ray"[color=purple] ;"Gazebo" -- "L-Ray"[color=goldenrod1] ;"ROS" -- "L-Ray"[color=purple] ;"Docker" -- "L-Ray"[color=purple] ;"Open3D" -- "L-Ray"[color=purple] ;"PCL" -- "L-Ray"[color=purple] ;
 }

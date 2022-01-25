@@ -12,33 +12,38 @@ label = "Robots" ;
 
 subgraph cluster_B{
 label = "Research Projects" ;
-"Duckietown AI Chips" "Sound Navigation" "Dual-Arm"
+"Duckietown AI Chips" "Sound Navigation" "Dual-Arm" "SAR UGV" "BVI Assistive Navigation"
 
 }
 
 subgraph cluster_C{
 label = "research direction";
-"SLAM" "DRL" "Robust Perception" "VR/AR HRI" "Robotic Education"
+"SLAM" "DRL" "Robust Perception" "VR/AR HRI" "Robotic Education" "UWB"
 }
 
 subgraph cluster_D{
 label = "Technical Skills - Core" ;
-"Docker" "ROS" "ROS2/DDS" "Gazebo" "PyTorch" "Python" "PyRobot"
+"Docker" "ROS" "ROS2/DDS" "Gazebo" "PyTorch" "Python" "PyRobot" "C/C++"
 }
 
 subgraph cluster_D1{
 label = "Technical Skills - Multiverse" ;
-"Unity" "C#" 
+"Unity" "C#"
 }
 
 subgraph cluster_D2{
 label = "Technical Skills - AI Chips" ;
- "PYNQ" "Vitas" "C/C++" "OpenCV"
+ "PYNQ" "Vitas"
 }
 
 subgraph cluster_D3{
+label = "Technical Skills - CV Tools" ;
+ "OpenCV" "Open3D" "PCL"
+}
+
+subgraph cluster_D4{
 label = "Technical Skills - Others" ;
-"ROS" "ROS2/DDS" "Tensorflow" "Solidwork" 
+"ROS" "ROS2/DDS" "Tensorflow" "Solidwork" "QT"
 }
 
 "Isabella" [color=red];
@@ -48,7 +53,7 @@ label = "Technical Skills - Others" ;
 
 "Sam" [color=green];
 "GMU" -- "Dual-Arm" -- "VR/AR HRI" -- "Unity" -- "Sam"[color=green];
-"Service BedBot" --  "Dual-Arm" [color=green]; 
+"Service BedBot" --  "Dual-Arm" [color=green];
 "Solidwork" -- "Sam"[color=green];
 
 "Louis" [color=blue];
@@ -61,4 +66,11 @@ label = "Technical Skills - Others" ;
 
 
 
+"Yellow" [color=goldenrod1];
+"Jackal" -- "BVI Assistive Navigation" -- "DRL"[color=goldenrod1] ;
+            "BVI Assistive Navigation" -- "SLAM" -- "PCL"[color=goldenrod1] ;"SLAM" -- "C/C++"[color=goldenrod1] ;
+            "BVI Assistive Navigation" -- "UWB"[color=goldenrod1] ;
+"Husky" -- "SAR UGV" -- "DRL"[color=goldenrod1];"DRL" -- "Gazebo"[color=goldenrod1];"DRL" -- "Python"[color=goldenrod1];
+           "SAR UGV" -- "SLAM"[color=goldenrod1];
+"C/C++" -- "Yellow"[color=goldenrod1] ;"Python" -- "Yellow"[color=goldenrod1] ;"PyTorch" -- "Yellow"[color=goldenrod1] ;"Gazebo" -- "Yellow"[color=goldenrod1] ;"ROS" -- "Yellow"[color=goldenrod1] ;"Docker" -- "Yellow"[color=goldenrod1] ;"QT" -- "Yellow"[color=goldenrod1] ;"OpenCV" -- "Yellow"[color=goldenrod1] ;"Open3D" -- "Yellow"[color=goldenrod1] ;"PCL" -- "Yellow"[color=goldenrod1] ;
 }

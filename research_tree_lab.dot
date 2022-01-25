@@ -59,6 +59,13 @@ label = "Technical Skills - Others" ;
 "Louis" [color=blue];
 "AI Chips/FPGA" -- "Duckietown AI Chips" -- "Robust Perception" -- "Vitas" -- "Louis"[color=blue];
 
+"Rick" [color=purple];
+"GMU" -- "Sound Navigation" -- "VR/AR HRI" -- "Unity" -- "C#" -- "Rick"[color=purple];
+"Husky" --  "Sound Navigation" -- "DRL" -- "PyTorch" -- "Rick"[color=purple];
+"Unity" -- "Gazebo" -- "Rick"[color=purple];
+
+
+
 "Yellow" [color=goldenrod1];
 "Jackal" -- "BVI Assistive Navigation" -- "DRL"[color=goldenrod1] ;
             "BVI Assistive Navigation" -- "SLAM" -- "PCL"[color=goldenrod1] ;"SLAM" -- "C/C++"[color=goldenrod1] ;

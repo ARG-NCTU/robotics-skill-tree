@@ -66,4 +66,15 @@ label = "Technical Skills - Others" ;
 "Husky" -- "SAR UGV" -- "DRL"[color=goldenrod1];"DRL" -- "Gazebo"[color=goldenrod1];"DRL" -- "Python"[color=goldenrod1];
            "SAR UGV" -- "SLAM"[color=goldenrod1];
 "C/C++" -- "Yellow"[color=goldenrod1] ;"Python" -- "Yellow"[color=goldenrod1] ;"PyTorch" -- "Yellow"[color=goldenrod1] ;"Gazebo" -- "Yellow"[color=goldenrod1] ;"ROS" -- "Yellow"[color=goldenrod1] ;"Docker" -- "Yellow"[color=goldenrod1] ;"QT" -- "Yellow"[color=goldenrod1] ;"OpenCV" -- "Yellow"[color=goldenrod1] ;"Open3D" -- "Yellow"[color=goldenrod1] ;"PCL" -- "Yellow"[color=goldenrod1] ;
+
+"Jacky" [color=aqua];
+"GMU" -- "Dual-Arm" -- "Robotic Education"[color=aqua];
+"Service BedBot" -- "Dual-Arm" -- "Robotic Education"[color=aqua];
+                    "Dual-Arm" -- "VR/AR HRI"[color=aqua];
+"Husky + UR5" -- "Sound Navigation" -- "VR/AR HRI"[color=aqua];
+"PCL" -- "Jacky" [color=aqua];"Open3D" -- "Jacky" [color=aqua];"OpenCV" -- "Jacky" [color=aqua];"ROS" -- "Jacky" [color=aqua];"PyRobot" -- "Jacky" [color=aqua];
+"Docker" -- "Jacky" [color=aqua];"C/C++" -- "Jacky" [color=aqua];"Python" -- "Jacky" [color=aqua];"Gazebo" -- "Jacky" [color=aqua];"Solidwork" -- "Jacky" [color=aqua];"Unity" -- "Jacky" [color=aqua];
+"Unity" -- "VR/AR HRI"[color=aqua];
+"PCL" -- "Robotic Education"[color=aqua];"Open3D" -- "Robotic Education"[color=aqua];"OpenCV" -- "Robotic Education"[color=aqua];
+"ROS" -- "Robotic Education"[color=aqua];"PyRobot" -- "Robotic Education"[color=aqua];
 }

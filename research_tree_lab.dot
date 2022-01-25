@@ -58,6 +58,9 @@ label = "Technical Skills - Others" ;
 
 "Louis" [color=blue];
 "AI Chips/FPGA" -- "Duckietown AI Chips" -- "Robust Perception" -- "Vitas" -- "Louis"[color=blue];
+"Python" -- "Robust Perception"[color=blue];
+"Husky" -- "SAR UGV" -- "Robust Perception"[color=blue];
+"OpenCV" -- "Louis"[color=blue]; "ROS" -- "Louis"[color=blue]; "Docker" -- "Louis"[color=blue]; "C/C++" -- "Louis"[color=blue]; "Python" -- "Louis"[color=blue]; "ROS2/DDS" -- "Louis"[color=blue]; "Gazebo" -- "Louis"[color=blue]; "PyTorch" -- "Louis"[color=blue];
 
 "Yellow" [color=goldenrod1];
 "Jackal" -- "BVI Assistive Navigation" -- "DRL"[color=goldenrod1] ;

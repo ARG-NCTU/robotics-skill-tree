@@ -66,4 +66,11 @@ label = "Technical Skills - Others" ;
 "Husky" -- "SAR UGV" -- "DRL"[color=goldenrod1];"DRL" -- "Gazebo"[color=goldenrod1];"DRL" -- "Python"[color=goldenrod1];
            "SAR UGV" -- "SLAM"[color=goldenrod1];
 "C/C++" -- "Yellow"[color=goldenrod1] ;"Python" -- "Yellow"[color=goldenrod1] ;"PyTorch" -- "Yellow"[color=goldenrod1] ;"Gazebo" -- "Yellow"[color=goldenrod1] ;"ROS" -- "Yellow"[color=goldenrod1] ;"Docker" -- "Yellow"[color=goldenrod1] ;"QT" -- "Yellow"[color=goldenrod1] ;"OpenCV" -- "Yellow"[color=goldenrod1] ;"Open3D" -- "Yellow"[color=goldenrod1] ;"PCL" -- "Yellow"[color=goldenrod1] ;
+
+
+"Austin" [color=purple];
+"Jackal + ViperX" -- "Service BedBot" -- "DRL" -- "PyTorch"[color=purple] ;
+                     "Service BedBot" -- "Robust Perception" -- "PyTorch"[color=purple];
+"Husky + UR5" -- "Service BedBot"[color=purple] ;
+"C/C++" -- "Austin"[color=purple] ;"Python" -- "Austin"[color=purple] ;"PyTorch" -- "Austin"[color=purple] ;"Gazebo" -- "Austin"[color=purple] ;"ROS" -- "Austin"[color=purple] ;"Docker" -- "Austin"[color=purple];
 }
